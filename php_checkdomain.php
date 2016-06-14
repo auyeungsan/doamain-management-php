@@ -7,7 +7,7 @@ $type = $_GET['type'];
 #$registar = $_GET['registar'];
 #$ex_var = $_GET['ex_var'];
 $g_log_path = '/tmp/game_check';
-$ng_log_path = '/tmp/game_check';
+$ng_log_path = '/tmp/nonegame_check';
 
 
 if(isset($_GET['ex_date'])){
