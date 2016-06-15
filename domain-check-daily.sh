@@ -29,8 +29,8 @@ WHOIS_TMP="/var/tmp/whois.$$"
 
 logPath="/tmp"
 
-if [ ! -f "$logPath/domain-check.log" ]; then
-	touch $logPath/domain-check.log
+if [ ! -f "$logPath/domain-check-daily.log" ]; then
+	touch $logPath/domain-check-daily.log
 fi
 
 
@@ -476,7 +476,7 @@ print_heading()
 {
         if [ "${QUIET}" != "TRUE" ]
         then
-                printf "\n%-35s %-17s %-8s %-11s %-5s\n" "Domain" "Registrar" "Status" "Expires" "Days Left"
+                printf "\n%-1s %-1s %-1s %-1s %-1s\n" "Domain" "Registrar" "Status" "Expires" "Days Left"
                 echo "----------------------------------- ----------------- -------- ----------- ---------"
         fi
 }
@@ -495,7 +495,7 @@ prints()
     if [ "${QUIET}" != "TRUE" ]
     then
             MIN_DATE=$(echo $3 | ${AWK} '{ print $1, $2, $4 }')
-            printf "%-35s %-17s %-8s %-11s %-5s\n" "$1" "$5" "$2" "$MIN_DATE" "$4"
+            printf "%-1s %-1s %-1s %-1s %-1s\n" "$1" "$5" "$2" "$MIN_DATE" "$4"
     fi
 }
 
